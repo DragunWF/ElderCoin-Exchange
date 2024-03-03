@@ -26,7 +26,7 @@
         android:layout_marginTop="109dp"
         android:text="Amount"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/amountTextInput"
+        app:layout_constraintBottom_toTopOf="@+id/amountTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleText"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="0 PHP"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/amountTextInput"
+        app:layout_constraintBottom_toTopOf="@+id/amountTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleText"
@@ -50,42 +50,46 @@
         android:layout_height="wrap_content"
         android:text="Currency Type"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/currencyTypeTextInput"
+        app:layout_constraintBottom_toTopOf="@+id/currencyTypeTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountTextInput" />
+        app:layout_constraintTop_toBottomOf="@+id/amountTextInputLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/amountTextInput"
+        android:id="@+id/amountTextInputLayout"
         android:layout_width="644dp"
-        android:layout_height="68dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/amountTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Test"
+            android:gravity="center_vertical"
+            android:hint="Amount To Convert"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textSize="34sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/currencyTypeTextInput"
+        android:id="@+id/currencyTypeTextInputLayout"
         android:layout_width="644dp"
-        android:layout_height="62dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountTextInput"
+        app:layout_constraintTop_toBottomOf="@+id/amountTextInputLayout"
         app:layout_constraintVertical_bias="0.16000003">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/currencyTypeTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Test 2"
+            android:gravity="center_vertical"
+            android:hint="Currency Type"
             android:textSize="34sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currencyTypeTextInput"
+        app:layout_constraintTop_toBottomOf="@+id/currencyTypeTextInputLayout"
         app:layout_constraintVertical_bias="0.098" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
