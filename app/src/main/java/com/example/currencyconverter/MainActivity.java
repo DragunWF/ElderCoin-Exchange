@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void setButtons() {
         convertButton.setOnClickListener(v -> {
             if (!isValidAmountInput()) {
-                moneyText.setText("Amount text input is invalid! Add only digits please.");
+                moneyText.setText("Invalid Input!");
                 return;
             }
             moneyText.setText("Input is valid!");
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         String text = String.valueOf(amountTextInput.getText());
         for (int i = 0, n = text.length(); i < n; i++) {
             char character = text.charAt(i);
-            if (!(character >= 48 && character <= 57)) {
+            if (!(character >= 48 && character <= 57)) { // ascii chart ord
                 return false;
             }
         }
