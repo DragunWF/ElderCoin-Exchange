@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
                 moneyText.setText("Invalid Input!");
                 return;
             }
+            String userCurrency = String.valueOf(currencyTypeTextInput.getText());
+            if (!CurrencyConverter.isValidCurrency(userCurrency)) {
+                moneyText.setText("Invalid currency!");
+                return;
+            }
             moneyText.setText("Input is valid!");
         });
     }
