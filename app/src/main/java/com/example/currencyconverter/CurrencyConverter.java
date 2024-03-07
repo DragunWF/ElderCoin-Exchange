@@ -25,14 +25,14 @@ public class CurrencyConverter {
 
     public static boolean isValidCurrency(String currency) {
         for (String key : currencies.keySet()) {
-            if (currency.equals(key)) {
+            if (currency.equalsIgnoreCase(key)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static double convertCurrency(String type, int amount) {
+    public static int convertCurrency(String type, int amount) {
         return currencies.get(type) * amount;
     }
 }
