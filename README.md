@@ -1,4 +1,4 @@
-# Currency Converter
+# ElderCoin Exchange App
 
 ## Description
 
