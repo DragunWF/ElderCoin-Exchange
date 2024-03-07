@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0 Points"
+        android:textAlignment="center"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/amountTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
