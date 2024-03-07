@@ -33,6 +33,6 @@ public class CurrencyConverter {
     }
 
     public static int convertCurrency(String type, int amount) {
-        return currencies.get(type) * amount;
+        return currencies.get(type.toUpperCase()) * amount;
     }
 }
