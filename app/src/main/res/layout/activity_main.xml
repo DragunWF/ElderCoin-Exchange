@@ -36,7 +36,7 @@
         android:id="@+id/moneyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 PHP"
+        android:text="0 Points"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/amountTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,8 +101,35 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currencyTypeTextInputLayout"
         app:layout_constraintVertical_bias="0.098" />
+
+    <Button
+        android:id="@+id/guideButton"
+        android:layout_width="191dp"
+        android:layout_height="79dp"
+        android:text="Guide"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyTypeTextInputLayout"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="756dp"
+        android:layout_height="100dp"
+        android:text="This is a currency convert app that converts currencies in Elder Scrolls lore into points to determine their worth. Click the guide button to see all the available currency codes to convert."
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
