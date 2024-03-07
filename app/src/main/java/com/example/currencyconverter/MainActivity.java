@@ -33,21 +33,22 @@ public class MainActivity extends AppCompatActivity {
     private void setButtons() {
         convertButton.setOnClickListener(v -> {
             if (!isValidAmountInput()) {
-                moneyText.setText("Invalid Amount Input!");
+                moneyText.setText("Amount Input must be a number!");
                 return;
             }
             try {
                 String userInput = String.valueOf(currencyTypeTextInput.getText());
                 String userCurrency = userInput.split(" ")[0];
+                int userAmount = Integer.parseInt(String.valueOf(amountTextInput.getText()));
                 if (!CurrencyConverter.isValidCurrency(userCurrency)) {
                     moneyText.setText("Currency type does not exist!");
                     return;
                 }
-                moneyText.setText(String.format("%s %s", CurrencyConverter.convertCurrency(userCurrency, 1)));
+                moneyText.setText(String.format("%s %s", CurrencyConverter.convertCurrency(userCurrency, userAmount)));
             } catch (ArrayIndexOutOfBoundsException err) {
                 moneyText.setText("Invalid Currency Type!");
             } catch (NumberFormatException err) {
-                moneyText.setText("");
+                moneyText.setText("Invalid Amount Input!");
             }
         });
     }
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         String text = String.valueOf(amountTextInput.getText());
         for (int i = 0, n = text.length(); i < n; i++) {
             char character = text.charAt(i);
-            if (!(character >= 48 && character <= 57)) { // ascii chart ord
+            if (!(character >= 48 && character <= 57) && character != '.') { // ascii chart ord
                 return false;
             }
         }
