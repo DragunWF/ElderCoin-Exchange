@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.87" />
 
     <TextView
-        android:id="@+id/moneyText"
+        android:id="@+id/pointsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0 Points"
