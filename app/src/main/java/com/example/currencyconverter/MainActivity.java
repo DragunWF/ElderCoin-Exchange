@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        CurrencyConverter.initialize();
 
         amountTextInput = findViewById(R.id.amountTextInput);
         currencyTypeTextInput = findViewById(R.id.currencyTypeTextInput);
@@ -32,15 +33,22 @@ public class MainActivity extends AppCompatActivity {
     private void setButtons() {
         convertButton.setOnClickListener(v -> {
             if (!isValidAmountInput()) {
-                moneyText.setText("Invalid Input!");
+                moneyText.setText("Invalid Amount Input!");
                 return;
             }
-            String userCurrency = String.valueOf(currencyTypeTextInput.getText());
-            if (!CurrencyConverter.isValidCurrency(userCurrency)) {
-                moneyText.setText("Invalid currency!");
-                return;
+            try {
+                String userInput = String.valueOf(currencyTypeTextInput.getText());
+                String userCurrency = userInput.split(" ")[0];
+                if (!CurrencyConverter.isValidCurrency(userCurrency)) {
+                    moneyText.setText("Currency type does not exist!");
+                    return;
+                }
+                moneyText.setText(String.format("%s %s", CurrencyConverter.convertCurrency(userCurrency, 1)));
+            } catch (ArrayIndexOutOfBoundsException err) {
+                moneyText.setText("Invalid Currency Type!");
+            } catch (NumberFormatException err) {
+                moneyText.setText("");
             }
-            moneyText.setText("Input is valid!");
         });
     }
 
