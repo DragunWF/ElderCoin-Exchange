@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class MainActivity extends AppCompatActivity {
     private TextInputEditText amountTextInput;
     private TextInputEditText currencyTypeTextInput;
-    private TextView moneyText;
+    private TextView pointsText;
     private Button convertButton;
 
     @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         amountTextInput = findViewById(R.id.amountTextInput);
         currencyTypeTextInput = findViewById(R.id.currencyTypeTextInput);
-        moneyText = findViewById(R.id.moneyText);
+        pointsText = findViewById(R.id.pointsText);
         convertButton = findViewById(R.id.convertButton);
 
         setButtons();
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private void setButtons() {
         convertButton.setOnClickListener(v -> {
             if (!isValidAmountInput()) {
-                moneyText.setText("Amount Input must be a number!");
+                pointsText.setText("Amount Input must be a number!");
                 return;
             }
             try {
@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 String userCurrency = userInput.split(" ")[0];
                 int userAmount = Integer.parseInt(String.valueOf(amountTextInput.getText()));
                 if (!CurrencyConverter.isValidCurrency(userCurrency)) {
-                    moneyText.setText("Currency type does not exist!");
+                    pointsText.setText("Currency type does not exist!");
                     return;
                 }
-                moneyText.setText(String.format("%s points", CurrencyConverter.convertCurrency(userCurrency, userAmount)));
+                pointsText.setText(String.format("%s points", CurrencyConverter.convertCurrency(userCurrency, userAmount)));
             } catch (ArrayIndexOutOfBoundsException err) {
-                moneyText.setText("Invalid Currency Type!");
+                pointsText.setText("Invalid Currency Type!");
             } catch (NumberFormatException err) {
-                moneyText.setText("Invalid Amount Input!");
+                pointsText.setText("Invalid Amount Input!");
             }
         });
     }
