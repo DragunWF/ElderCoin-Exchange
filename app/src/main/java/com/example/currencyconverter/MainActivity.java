@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     moneyText.setText("Currency type does not exist!");
                     return;
                 }
-                moneyText.setText(String.format("%s %s", CurrencyConverter.convertCurrency(userCurrency, userAmount)));
+                moneyText.setText(String.format("%s points", CurrencyConverter.convertCurrency(userCurrency, userAmount)));
             } catch (ArrayIndexOutOfBoundsException err) {
                 moneyText.setText("Invalid Currency Type!");
             } catch (NumberFormatException err) {
