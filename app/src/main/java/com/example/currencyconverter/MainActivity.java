@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 String userInput = String.valueOf(currencyTypeTextInput.getText());
                 String userCurrency = userInput.split(" ")[0];
-                int userAmount = Integer.parseInt(String.valueOf(amountTextInput.getText()));
+                int userAmount = (int)Double.parseDouble(String.valueOf(amountTextInput.getText()));
+                amountTextInput.setText(String.valueOf(userAmount));
                 if (!CurrencyConverter.isValidCurrency(userCurrency)) {
                     pointsText.setText("Currency type does not exist!");
                     return;
