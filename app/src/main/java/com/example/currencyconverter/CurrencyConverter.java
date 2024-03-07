@@ -3,10 +3,25 @@ package com.example.currencyconverter;
 import java.util.HashMap;
 public class CurrencyConverter {
     private static HashMap<String, Integer> currencies = new HashMap<>();
-    /*
-        These are hard coded values. In an actual currency converter,
-        It is best to use an API to get reliable values.
-    */
+    private static boolean initialized = false;
+
+    public static void initialize() {
+        if (!initialized) {
+            initialized = true;
+
+            currencies.put("POINTS", 1);
+            currencies.put("POINT", 1);
+
+            currencies.put("GOLD", 100);
+            currencies.put("SILVER", 50);
+            currencies.put("COPPER", 10);
+            currencies.put("DWEMER", 75);
+            currencies.put("IMPERIAL", 90);
+
+            currencies.put("AKAVIRI", 150);
+            currencies.put("DRAGONGOLD", 150);
+        }
+    }
 
     public static boolean isValidCurrency(String currency) {
         for (String key : currencies.keySet()) {
@@ -17,7 +32,7 @@ public class CurrencyConverter {
         return false;
     }
 
-    public static double convertCurrency(double amount) {
-        return 1.0;
+    public static double convertCurrency(String type, int amount) {
+        return currencies.get(type) * amount;
     }
 }
