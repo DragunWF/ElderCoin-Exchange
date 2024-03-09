@@ -3,6 +3,7 @@ package com.example.currencyconverter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Button;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText currencyTypeTextInput;
     private TextView pointsText;
     private Button convertButton;
+    private Button guideButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         currencyTypeTextInput = findViewById(R.id.currencyTypeTextInput);
         pointsText = findViewById(R.id.pointsText);
         convertButton = findViewById(R.id.convertButton);
+        guideButton = findViewById(R.id.guideButton);
 
         setButtons();
     }
@@ -51,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (NumberFormatException err) {
                 pointsText.setText("Invalid Amount Input!");
             }
+        });
+
+        guideButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, GuideActivity.class);
+            startActivity(intent);
         });
     }
 
