@@ -49,7 +49,19 @@ public class CurrencyConverter {
         return false;
     }
 
-    public static int convertCurrency(String type, int amount) {
-        return currencies.get(type.toUpperCase()) * amount;
+    public static String convertCurrency(String type, int amount) {
+        int result = currencies.get(type.toUpperCase()) * amount;
+        String strResult = String.valueOf(result);
+        if (result < 1000) {
+            return strResult;
+        }
+        StringBuilder formattedResult = new StringBuilder();
+        for (int i = strResult.length() - 1, n = 1; i >= 0; i--, n++) {
+            formattedResult.insert(0, strResult.charAt(i));
+            if (n % 3 == 0) {
+                formattedResult.insert(0, ",");
+            }
+        }
+        return formattedResult.toString();
     }
 }
