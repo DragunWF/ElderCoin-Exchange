@@ -1,26 +1,43 @@
 package com.example.currencyconverter;
 
 import java.util.HashMap;
+import java.util.ArrayList;
+
 public class CurrencyConverter {
     private static HashMap<String, Integer> currencies = new HashMap<>();
+    private static ArrayList<CurrencyType> currencyTypes = new ArrayList<>();
     private static boolean initialized = false;
 
     public static void initialize() {
         if (!initialized) {
             initialized = true;
 
-            currencies.put("POINTS", 1);
-            currencies.put("POINT", 1);
+            currencyTypes.add(new CurrencyType("Base Point", 1, "POINT", "POINTS"));
+            currencyTypes.add(new CurrencyType("Gold Septim", 100, "GOLD"));
+            currencyTypes.add(new CurrencyType("Silver Septim", 50, "SILVER"));
+            currencyTypes.add(new CurrencyType("Copper Septim", 10, "COPPER"));
+            currencyTypes.add(new CurrencyType("Dwemer Coin", 75, "DWEMER", "COIN"));
+            currencyTypes.add(new CurrencyType("Imperial Drake", 90, "IMPERIAL", "DRAKE"));
+            currencyTypes.add(new CurrencyType("Akaviri Dragongold", 150, "DRAGONGOLD"));
 
-            currencies.put("GOLD", 100);
-            currencies.put("SILVER", 50);
-            currencies.put("COPPER", 10);
-            currencies.put("DWEMER", 75);
-            currencies.put("IMPERIAL", 90);
-
-            currencies.put("AKAVIRI", 150);
-            currencies.put("DRAGONGOLD", 150);
+            for (CurrencyType type : currencyTypes) {
+                ArrayList<String> codes = type.getCodes();
+                for (int i = 0, n = codes.size(); i < n; i++) {
+                    currencies.put(codes.get(i), type.getPoints());
+                }
+            }
         }
+    }
+
+    public static String getCurrenciesText() {
+        StringBuilder output = new StringBuilder();
+        output.append("Elder Scrolls Currencies:\n");
+        for (int i = 0, n = currencyTypes.size(); i < n; i++) {
+            CurrencyType type = currencyTypes.get(i);
+            output.append(String.format("%s (Code: %s): %s points\n",
+                    type.getName(), String.join(", ", type.getCodes()), type.getPoints()));
+        }
+        return output.toString();
     }
 
     public static boolean isValidCurrency(String currency) {
