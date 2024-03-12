@@ -13,10 +13,10 @@ A simple Android app made for me to practice learning Android studio. It is a cu
 
 ### Conversion Activity
 
-![Main Activity 1](Images/MainActivity1.JPG)
-![Main Activity 2](Images/MainActivity2.JPG)
-![Main Activity 3](Images/MainActivity3.JPG)
+![Main Activity 1](images/MainActivity1.JPG)
+![Main Activity 2](images/MainActivity2.JPG)
+![Main Activity 3](images/MainActivity3.JPG)
 
 ### Guide Activity
 
-![Guide Activity](Images/GuideActivity.JPG)
+![Guide Activity](images/GuideActivity.JPG)
