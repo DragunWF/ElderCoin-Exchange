@@ -2,12 +2,21 @@
 
 ## Description
 
-A simple Android app made for me to practice learning Android studio. It is a currency converter app for determining the value of currencies in the Elder Scrolls lore into points to determine their worth. Just a reminder that this is **still in development**.
+A simple Android app made for me to practice learning Android studio. It is a currency converter app for determining the value of currencies in the Elder Scrolls lore into points to determine their worth.
 
-## Links
+## Resources
 
+- [Elder Scrolls Lore](https://en.uesp.net/wiki/Lore:Main_Page)
 - [Elder Scrolls Currencies](https://en.uesp.net/wiki/Lore:Currency)
 
 ## Images of the application
 
-`To be added`
+### Conversion Activity
+
+![Main Activity 1](Images/MainActivity1.JPG)
+![Main Activity 2](Images/MainActivity2.JPG)
+![Main Activity 3](Images/MainActivity3.JPG)
+
+### Guide Activity
+
+![Guide Activity](Images/GuideActivity.JPG)
