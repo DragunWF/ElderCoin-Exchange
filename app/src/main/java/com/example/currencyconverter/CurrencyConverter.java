@@ -18,7 +18,7 @@ public class CurrencyConverter {
             currencyTypes.add(new CurrencyType("Copper Septim", 10, "COPPER"));
             currencyTypes.add(new CurrencyType("Dwemer Coin", 75, "DWEMER", "COIN"));
             currencyTypes.add(new CurrencyType("Imperial Drake", 90, "IMPERIAL", "DRAKE"));
-            currencyTypes.add(new CurrencyType("Akaviri Dragongold", 150, "DRAGONGOLD"));
+            currencyTypes.add(new CurrencyType("Akaviri Dragongold", 150, "AKAVIRI", "DRAGONGOLD"));
 
             for (CurrencyType type : currencyTypes) {
                 ArrayList<String> codes = type.getCodes();
@@ -31,7 +31,6 @@ public class CurrencyConverter {
 
     public static String getCurrenciesText() {
         StringBuilder output = new StringBuilder();
-        output.append("Elder Scrolls Currencies:\n");
         for (int i = 0, n = currencyTypes.size(); i < n; i++) {
             CurrencyType type = currencyTypes.get(i);
             String pointStr = type.getPoints() > 1 ? "points" : "point";
