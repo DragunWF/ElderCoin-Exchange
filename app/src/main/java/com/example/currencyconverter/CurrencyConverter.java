@@ -34,8 +34,9 @@ public class CurrencyConverter {
         output.append("Elder Scrolls Currencies:\n");
         for (int i = 0, n = currencyTypes.size(); i < n; i++) {
             CurrencyType type = currencyTypes.get(i);
-            output.append(String.format("%s (Code: %s): %s points\n",
-                    type.getName(), String.join(", ", type.getCodes()), type.getPoints()));
+            String pointStr = type.getPoints() > 1 ? "points" : "point";
+            output.append(String.format("%s (Code: %s): %s %s\n",
+                    type.getName(), String.join(", ", type.getCodes()), type.getPoints(), pointStr));
         }
         return output.toString();
     }
