@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 public class CurrencyConverter {
-    private static HashMap<String, Integer> currencies = new HashMap<>();
-    private static ArrayList<CurrencyType> currencyTypes = new ArrayList<>();
+    private static final HashMap<String, Integer> currencies = new HashMap<>();
+    private static final ArrayList<CurrencyType> currencyTypes = new ArrayList<>();
     private static boolean initialized = false;
 
     public static void initialize() {
