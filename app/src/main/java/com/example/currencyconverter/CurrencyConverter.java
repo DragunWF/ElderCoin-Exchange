@@ -12,7 +12,7 @@ public class CurrencyConverter {
         if (!initialized) {
             initialized = true;
 
-            currencyTypes.add(new CurrencyType("Base Point", 1, "POINT", "POINTS"));
+            currencyTypes.add(new CurrencyType("Base Point", 1, "BASE", "POINT", "POINTS"));
             currencyTypes.add(new CurrencyType("Gold Septim", 100, "GOLD"));
             currencyTypes.add(new CurrencyType("Silver Septim", 50, "SILVER"));
             currencyTypes.add(new CurrencyType("Copper Septim", 10, "COPPER"));
