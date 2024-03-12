@@ -7,17 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".GuideActivity">
 
+  <Button
+      android:id="@+id/backButton"
+      android:layout_width="154dp"
+      android:layout_height="68dp"
+      android:layout_marginStart="405dp"
+      android:layout_marginEnd="404dp"
+      android:text="Back"
+      android:textAlignment="gravity"
+      android:textSize="34sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.507"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.808" />
+
   <TextView
       android:id="@+id/currenciesText"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="423dp"
-      android:layout_marginTop="590dp"
-      android:layout_marginEnd="420dp"
-      android:layout_marginBottom="591dp"
-      android:text="Elder Scrolls Currencies:"
-      android:textAlignment="gravity"
-      android:textSize="34sp"
+      android:layout_marginStart="363dp"
+      android:layout_marginEnd="363dp"
+      android:text="[Currency Data Here]"
+      android:textAlignment="viewStart"
+      android:textSize="32sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
