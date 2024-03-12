@@ -34,8 +34,8 @@ public class CurrencyConverter {
         for (int i = 0, n = currencyTypes.size(); i < n; i++) {
             CurrencyType type = currencyTypes.get(i);
             String pointStr = type.getPoints() > 1 ? "points" : "point";
-            output.append(String.format("%s (Code: %s): %s %s\n",
-                    type.getName(), String.join(", ", type.getCodes()), type.getPoints(), pointStr));
+            output.append(String.format("%s: %s %s\n",
+                    type.getName(), type.getPoints(), pointStr));
         }
         return output.toString();
     }
