@@ -40,6 +40,16 @@ public class CurrencyConverter {
         return output.toString();
     }
 
+    public static String getValidCurrency(String input) {
+        String[] words = input.split(" ");
+        for (String word : words) {
+            if (isValidCurrency(word)) {
+                return word;
+            }
+        }
+        return null;
+    }
+
     public static boolean isValidCurrency(String currency) {
         for (String key : currencies.keySet()) {
             if (currency.equalsIgnoreCase(key)) {
@@ -58,7 +68,7 @@ public class CurrencyConverter {
         StringBuilder formattedResult = new StringBuilder();
         for (int i = strResult.length() - 1, n = 1; i >= 0; i--, n++) {
             formattedResult.insert(0, strResult.charAt(i));
-            if (n % 3 == 0) {
+            if (n % 3 == 0 && n != strResult.length()) {
                 formattedResult.insert(0, ",");
             }
         }
