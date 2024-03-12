@@ -9,6 +9,11 @@ A simple Android app made for me to practice learning Android studio. It is a cu
 - [Elder Scrolls Lore](https://en.uesp.net/wiki/Lore:Main_Page)
 - [Elder Scrolls Currencies](https://en.uesp.net/wiki/Lore:Currency)
 
+## Device Tested On
+
+- Android 7.0 Nougat API 24
+- 1800x2400 pixels Screen Size
+
 ## Images of the application
 
 ### Conversion Activity
